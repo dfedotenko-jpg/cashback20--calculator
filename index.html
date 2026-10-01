@@ -8,13 +8,13 @@
 <section class="panel"><div class="top"><div><h1>Кэшбэк 20% — эффективность акции</h1><div class="muted">Загрузите подготовленный XLSX. Файл обрабатывается только в вашем браузере.</div></div><label class="btn">Загрузить XLSX<input id="file" type="file" accept=".xlsx,.xls"></label></div><p id="status" class="muted">Файл не выбран.</p></section>
 <section id="summary" class="cards hidden">
 <div class="card"><div class="label">Общее количество чеков</div><div class="value" id="s1">0</div></div>
-<div class="card"><div class="label">Начислено кэшбэк 20%</div><div class="value" id="s2">0</div></div>
-<div class="card"><div class="label">Повторные покупки с кэшбэком 20%</div><div class="value" id="s3">0</div></div>
-<div class="card"><div class="label">Чеки со списанием двойных бонусов</div><div class="value" id="s4">0</div></div>
-<div class="card"><div class="label">Чеки без списания двойных бонусов</div><div class="value" id="s5">0</div></div>
+<div class="card"><div class="label">Чеки с начисленным кэшбэком 20%</div><div class="value" id="s2">0</div></div>
+<div class="card"><div class="label">Чеки со списанными бонусами «Кэшбэк 20%»</div><div class="value" id="s3">0</div></div>
+<div class="card"><div class="label">Клиенты, которые списывают двойной кэшбэк (чеки)</div><div class="value" id="s4">0</div></div>
+<div class="card"><div class="label">Клиенты, которые накапливают, но не списывают двойной кэшбэк (чеки)</div><div class="value" id="s5">0</div></div>
 <div class="card"><div class="label">UPT</div><div class="value" id="s6">0.00</div></div>
 </section>
-<section id="results" class="panel hidden"><h2>Эффективность акции по магазинам</h2><div class="tablebox"><table><thead><tr><th>Магазин</th><th>Общее количество чеков</th><th>Начислено кэшбэк 20%</th><th>Повторные покупки с кэшбэком 20%</th><th>Чеки со списанием двойных бонусов</th><th>Чеки без списания двойных бонусов</th><th>Эффективность акции</th><th>Единицы</th><th>UPT</th></tr></thead><tbody id="body"></tbody><tfoot id="foot"></tfoot></table></div></section>
+<section id="results" class="panel hidden"><h2>Эффективность акции по магазинам</h2><div class="tablebox"><table><thead><tr><th>Магазин</th><th>Общее количество чеков</th><th>Чеки с начисленным кэшбэком 20%</th><th>Чеки со списанными бонусами «Кэшбэк 20%»</th><th>Клиенты, которые списывают двойной кэшбэк (чеки)</th><th>Клиенты, которые накапливают, но не списывают двойной кэшбэк (чеки)</th><th>Эффективность акции</th><th>Единицы</th><th>UPT</th></tr></thead><tbody id="body"></tbody><tfoot id="foot"></tfoot></table></div></section>
 <section class="panel muted"><b>Логика расчёта:</b> услуги «ушить/подшить» и любые позиции кастомизации полностью исключаются из расчёта: не входят ни в чеки, ни в единицы, ни в показатели акции. Общее количество чеков считается с учётом возвратов: продажный чек = +1, возвратный = −1. UPT = итоговые единицы с учётом возвратов / общее количество чеков с учётом возвратов. Повторная покупка — второй и последующий продажный чек одной дисконтной карты в одном магазине за один день. Возвраты исключаются из показателей акции. Списание определяется по колонке «Скидка бонусы»: любое ненулевое значение. Возвраты не участвуют в показателях эффективности акции.</section>
 </main><script>
 const $=s=>document.querySelector(s),norm=v=>String(v??'').trim().toLowerCase().replace(/ё/g,'е').replace(/\s+/g,' ');
